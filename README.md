@@ -11,8 +11,8 @@ This is a [Next.js](https://nextjs.org/) application using the App Router. It in
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/liamsegura/nextauth-mongodb.git
-   cd my-auth-app
+   git clone https://github.com/liamsegura/nextjs-nextauth-mongodb.git
+   cd nextjs-nextauth-mongodb
    ```
 
 2. Install the dependencies:
