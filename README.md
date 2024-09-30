@@ -1,3 +1,5 @@
+Very basic setup, Google login, user is saved to mongodb, sign out. 
+
 This is a [Next.js](https://nextjs.org/) application using the App Router. It integrates [NextAuth.js](https://next-auth.js.org/) for authentication with Google OAuth and MongoDB as the database.
 
 ## Getting Started
