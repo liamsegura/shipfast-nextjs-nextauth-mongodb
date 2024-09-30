@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) application using the App Router. It integrates [NextAuth.js](https://next-auth.js.org/) for authentication with Google OAuth and MongoDB as the database.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/liamsegura/nextauth-mongodb.git
+   cd my-auth-app
+   ```
 
-## Learn More
+2. Install the dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```
+   npm install
+   # or
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. create a `.env.local` file in the root directory and add the following environments variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET={NEXTAUTH_SECRET}
+   GOOGLE_CLIENT_ID={GOOGLE_CLIENT_ID}
+   GOOGLE_CLIENT_SECRET={GOOGLE_CLIENT_SECRET}
+   MONGODB_URI={MONGODB_URI}
+   ```
 
-## Deploy on Vercel
+### Setting Up Google Client
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    Go to the Google Cloud Console.
+    Create a new project or select an existing project.
+    Navigate to the Credentials page.
+    Click Create Credentials and select OAuth 2.0 Client IDs.
+    Configure the OAuth consent screen.
+    Set the application type to Web application.
+    Add http://localhost:3000 to the Authorized JavaScript origins.
+    Add http://localhost:3000/api/auth/callback/google to the Authorized redirect URIs.
+    Click Create and copy the Client ID and Client Secret to your .env.local file.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Setting Up MongoDB URI
+
+    Go to MongoDB Atlas.
+    Create a new cluster or use an existing cluster.
+    Click Connect and follow the instructions to allow your IP address and create a database user.
+    Copy the connection string and replace <username>, <password>, and <dbname> with your MongoDB credentials and   database name.
+    Add the connection string to your .env.local file as MONGODB_URI.
