@@ -12,6 +12,7 @@ export default async function Home() {
       {session ? (
         <>
           <p>Signed in as {session.user.email}</p>
+          <Link href="/dashboard">Go to Dashboard</Link>
           <Link href="/api/auth/signout">Sign out</Link>
         </>
       ) : (
